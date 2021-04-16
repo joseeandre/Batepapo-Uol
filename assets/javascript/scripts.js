@@ -8,6 +8,20 @@ let nomeUsuario;
 let selecionadosLista = [];
 let selecionadosVisibilidade = [];
 
+document.querySelector(".mensagem").addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("enviar").click();
+    }
+});
+
+document.querySelector(".nome").addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("entrar").click();
+    }
+});
+
 function aoEntrar() {
     criarUsuario();
     setInterval(pegarUsuarios, 10000);
@@ -94,8 +108,10 @@ function renderizarMensagem(objeto) {
     let smsCinza = '<div class="caixa-mensagem cinza"><p><horario>[' + hora + ']</horario><strong>  ' + nome + '</strong> para <strong> ' + destino + ' </strong>: ' + texto + '</p></div>';
     let sms = '<div class="caixa-mensagem"><p><horario>[' + hora + ']</horario><strong>  ' + nome + '</strong> para <strong> ' + destino + ' </strong>: ' + texto + '</p></div>';
 
-    if (objeto.type === "private_message" && destino === nomeUsuario) {
-        mensagensServidor.innerHTML += smsVermelho;
+    if (objeto.type === "private_message") {
+        if (destino === nomeUsuario) {
+            mensagensServidor.innerHTML += smsVermelho;
+        }
     } else {
         if (objeto.type === "status") {
             mensagensServidor.innerHTML += smsCinza;
@@ -108,8 +124,18 @@ function renderizarMensagem(objeto) {
 function renderizarUsuarios(objeto) {
     const nome = objeto.name;
     let conteudo = '<div class="caixa-lateral" onclick="selecionarUsuario(this)"><div class="nome-usuario"><ion-icon name="person-circle-outline"></ion-icon><h1>' + nome + '</h1></div><ion-icon id="' + nome + '" name="checkmark-outline" class="usuario oculto"></ion-icon></div>';
+    let conteudoSelecionado = '<div class="caixa-lateral" onclick="selecionarUsuario(this)"><div class="nome-usuario"><ion-icon name="person-circle-outline"></ion-icon><h1>' + nome + '</h1></div><ion-icon id="' + nome + '" name="checkmark-outline" class="usuario selecionado"></ion-icon></div>';
 
-    usuariosServidor.innerHTML += conteudo;
+    if (selecionadosLista.length === 1) {
+        if (selecionadosLista[0].id != "Todos" && selecionadosLista[0].id === nome) {
+            usuariosServidor.innerHTML += conteudoSelecionado;
+        } else {
+            usuariosServidor.innerHTML += conteudo;
+        }
+    } else {
+        usuariosServidor.innerHTML += conteudo;
+    }
+
 }
 
 function lembreteServidor() {
@@ -156,10 +182,12 @@ function sairLateral() {
 
 function selecionarUsuario(id) {
     const selecionado = id.querySelector(".usuario");
+    let selecionadoAnterior;
 
     if (selecionadosLista.length === 1) {
-        selecionadosLista[0].classList.remove("selecionado");
-        selecionadosLista[0].classList.add("oculto");
+        selecionadoAnterior = document.getElementById(selecionadosLista[0].id);
+        selecionadoAnterior.classList.remove("selecionado");
+        selecionadoAnterior.classList.add("oculto");
         selecionadosLista.pop();
     }
 

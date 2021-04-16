@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Batepapo UOL</title>
+    <link rel="sortcut icon" href="pictures/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -15,7 +17,7 @@
         <img src="pictures/logo 1.png" alt="logo entrada">
         <div class="login">
             <input type="text" class="nome" placeholder="Digite seu nome">
-            <button class="entrar" onclick="aoEntrar()">Entrar</button>
+            <button id="entrar" class="entrar" onclick="aoEntrar()">Entrar</button>
         </div>
         <div class="carregando oculto">
             <img src="pictures/loading.gif" alt="carregando">
@@ -31,7 +33,7 @@
         <div class="mensagens"></div>
         <div class="baixo barra">
             <input type="text" class="mensagem" placeholder="Escreva aqui...">
-            <ion-icon name="paper-plane-outline" onclick="enviarMensagem()"></ion-icon>
+            <ion-icon id="enviar" name="paper-plane-outline" onclick="enviarMensagem()"></ion-icon>
         </div>
         <div class="tela-preta oculto" onclick="sairLateral()"></div>
         <div class="lateral oculto">
