@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batepapo UOL</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="entrada">
+        <img src="pictures/logo 1.png" alt="logo entrada">
+        <div class="login">
+            <input type="text" class="nome" placeholder="Digite seu nome">
+            <button class="entrar" onclick="aoEntrar()">Entrar</button>
+        </div>
+        <div class="carregando oculto">
+            <img src="pictures/loading.gif" alt="carregando">
+            <p>Carregando...</p>
+        </div>
+    </div>
+
+    <div class="chat oculto">
+        <div class="topo barra">
+            <img src="pictures/logo 1.png" alt="logo">
+            <ion-icon onclick="barraLateral()" name="people"></ion-icon>
+        </div>
+        <div class="mensagens"></div>
+        <div class="baixo barra">
+            <input type="text" class="mensagem" placeholder="Escreva aqui...">
+            <ion-icon name="paper-plane-outline" onclick="enviarMensagem()"></ion-icon>
+        </div>
+        <div class="tela-preta oculto" onclick="sairLateral()"></div>
+        <div class="lateral oculto">
+            <p><strong>Escolha um contato para enviar mensagem:</strong></p>
+            <div class="contato">
+                <div class="caixa-lateral" onclick="selecionarUsuario(this)">
+                    <div class="nome-usuario">
+                        <ion-icon name="people"></ion-icon>
+                        <h1>Todos</h1>
+                    </div>
+                    <ion-icon name="checkmark-outline" id="Todos" class="usuario oculto"></ion-icon>
+                </div>
+                <div class="usuarios"></div>
+            </div>
+
+            <p><strong>Escolha a Visibilidade:</strong></p>
+            <div class="visibilidade">
+                <div class="caixa-lateral" onclick="selecionarVisibilidade(this)">
+                    <div class="nome-usuario">
+                        <ion-icon class="tamanho" name="lock-open"></ion-icon>
+                        <h1>Público</h1>
+                    </div>
+                    <ion-icon name="checkmark-outline" id="message" class="usuario oculto"></ion-icon>
+                </div>
+                <div class="caixa-lateral" onclick="selecionarVisibilidade(this)">
+                    <div class="nome-usuario">
+                        <ion-icon name="lock-closed"></ion-icon>
+                        <h1>Reservado</h1>
+                    </div>
+                    <ion-icon name="checkmark-outline" id="private_message" class="usuario oculto"></ion-icon>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="assets/javascript/scripts.js"></script>
+</body>
+
+</html>

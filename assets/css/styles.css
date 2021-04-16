@@ -1,0 +1,202 @@
+body {
+    font-family: 'Roboto';
+    font-size: 14px;
+    background-color: white;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.fundo-chat {
+    background-color: #E5E5E5;
+}
+
+.chat {
+    width: 100%;
+    margin-top: 106px;
+    margin-bottom: 84px;
+}
+
+.entrada {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.entrada img {
+    width: 130px;
+    margin: 72px auto;
+}
+
+.entrada .login input {
+    border: 1px solid #D7D7D7;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 54px;
+    font-size: 18px;
+    width: 261px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.entrada .login input::placeholder {
+    color: #AEAEAE;
+}
+
+.entrada .login .entrar {
+    background-color: #E7E7E7;
+    width: 109px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9px;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.entrada .carregando img {
+    width: 100px;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.entrada .carregando p {
+    font-size: 18px;
+}
+
+.barra {
+    width: 100%;
+    height: 80px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+
+.topo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.baixo {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.barra ion-icon {
+    font-size: 30px;
+    margin-right: 22px;
+}
+
+.barra img {
+    width: 75px;
+    margin-left: 22px;
+}
+
+.barra input {
+    border: none;
+    height: 30px;
+    font-size: 18px;
+    margin-left: 17px;
+    width: 200px;
+}
+
+.barra input::placeholder {
+    font-style: italic;
+}
+
+.mensagens {
+    width: 100%;
+}
+
+.oculto {
+    display: none;
+}
+
+.caixa-mensagem {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    background-color: white;
+    padding: 0 8px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+}
+
+horario {
+    color: #AAAAAA;
+}
+
+.cinza {
+    background-color: #DCDCDC;
+}
+
+.vermelho {
+    background-color: #eca8a8;
+}
+
+.tela-preta {
+    height: 100%;
+    background-color: black;
+    opacity: 40%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    width: 100%;
+}
+
+.lateral {
+    width: 70vw;
+    background-color: white;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    font-size: 16px;
+    overflow-y: scroll;
+}
+
+.caixa-lateral {
+    width: 190px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lateral p {
+    margin: 24px auto;
+    width: 190px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.nome-usuario {
+    display: flex;
+    align-items: center;
+}
+
+.lateral ion-icon {
+    font-size: 22px;
+    margin-right: 6px;
+}
+
+.selecionado ion-icon {
+    font-size: 8px;
+    color: green;
+    display: inline;
+}
